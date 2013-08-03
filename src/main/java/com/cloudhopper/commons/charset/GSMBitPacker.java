@@ -158,7 +158,7 @@ public class GSMBitPacker {
         byte[] unpacked = new byte[unpackedLen];
         int len = unpacked.length;
         int current = 0;
-        int bitpos = 0;
+        int bitpos = 1; // first septed shall be shifted
         for (int i = 0; i < len; i++) {
             // remove top bit and assign first half of partial bits
             unpacked[i] = (byte)(((packed[current] & 0xFF) >> bitpos) & 0x7F);
